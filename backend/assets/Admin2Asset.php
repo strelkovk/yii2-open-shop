@@ -13,18 +13,13 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class Admin2Asset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
-    public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+    public $sourcePath = '@bower/startbootstrap-sb-admin-2/dist';
+
     public $css = [
-        'css/site.css',
+        'css/sb-admin-2.css',
     ];
     public $js = [
-    ];
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
     ];
 }

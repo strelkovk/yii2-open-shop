@@ -1,14 +1,12 @@
 <?php
-
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
+
+/* @var $this \yii\web\View */
+/* @var $content string */
 
 AppAsset::register($this);
 ?>
@@ -24,27 +22,86 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'Pitomnik',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-default navbar-fixed-top',
         ],
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
     ];
+    $menuItems[] = ['label' => 'Users', 'url' => ['/user/index']];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+
+        $menuItems[] = [
+            'label' => Yii::t('backend','nav.dictionary'),
+            'items' =>[
+                [
+                    'label' => Yii::t('backend','Translations'),
+                    'url' => ['/translate'],
+
+                ],
+                [
+                    'label' => Yii::t('backend','nav.dictionary.region'),
+                    'url' => ['/dictionary/table?name=Regions'],
+                ],
+                [
+                    'label' => Yii::t('backend','nav.dictionary.plantClasses'),
+                    'url' => ['/dictionary/table?name=PlantClasses'],
+                ],
+                [
+                    'label' => Yii::t('backend','nav.dictionary.plantSorts'),
+                    'url' => ['/dictionary/table?name=PlantSorts'],
+                ],
+                [
+                    'label' => Yii::t('backend','nav.dictionary.Plants'),
+                    'url' => ['/dictionary/table?name=Plants'],
+                ],
+
+                [
+                    'label' => Yii::t('backend','nav.dictionary.Nurseries'),
+                    'url' => ['/dictionary/table?name=Nurseries'],
+                ],
+                [
+                    'label' => Yii::t('backend','nav.dictionary.PlantSpecies'),
+                    'url' => ['/dictionary/table?name=PlantSpecies'],
+                ],
+
+            ],
+        ];
+
+        $menuItems[] = [
+            'label' => Yii::t('backend','nav.tools'),
+            'items' =>[
+                [
+                    'label' => Yii::t('backend','nav.sqlmyadmin'),
+                    'url' => ['/phpmyadmin'],
+                ],
+                [
+                    'label' => Yii::t('backend','nav.file.manager'),
+                    'url' => ['/site/logout'],
+                ]
+            ]
+        ];
+        $menuItems[] = [
+            'label' => Yii::t('backend','nav.nurseries'),
+            'url' => ['/nurseries'],
+        ];
+
         $menuItems[] = [
             'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
             'url' => ['/site/logout'],
             'linkOptions' => ['data-method' => 'post']
         ];
+
+
+
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -57,7 +114,6 @@ AppAsset::register($this);
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <?= Alert::widget() ?>
         <?= $content ?>
     </div>
 </div>
@@ -65,12 +121,18 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 
 <?php $this->endBody() ?>
+<script>
+    $.ajaxSetup({
+        data: <?= \yii\helpers\Json::encode([
+            \yii::$app->request->csrfParam => \yii::$app->request->csrfToken,
+        ]) ?>
+    });
+</script>
 </body>
 </html>
 <?php $this->endPage() ?>

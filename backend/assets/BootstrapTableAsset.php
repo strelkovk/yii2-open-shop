@@ -13,18 +13,20 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class BootstrapTableAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
+
+    public $sourcePath = '@bower/bootstrap-table/dist';
+
     public $css = [
-        'css/site.css',
+        'bootstrap-table.min.css'
     ];
     public $js = [
+        'bootstrap-table.min.js',
+        //'extensions/filter/bootstrap-table-filter.min.js',
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+
     ];
 }
