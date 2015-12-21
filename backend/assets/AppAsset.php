@@ -20,11 +20,16 @@ class AppAsset extends AssetBundle
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     public $css = [
         'css/site.css',
+        'css/bootstrap-notify.css',
     ];
     public $js = [
+        'js/admin.js',
+        'js/bootstrap-notify.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
+        'backend\assets\BootstrapTableAsset',
     ];
 }

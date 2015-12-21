@@ -1,5 +1,7 @@
 <?php
 return [
+    'language' => 'ru',
+    'bootstrap' => [],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
         'db' => [
