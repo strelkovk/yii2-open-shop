@@ -24,55 +24,34 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <div class="wrap">
     <?php
+
     NavBar::begin([
-        'brandLabel' => 'Pitomnik',
+        'brandLabel' => 'AdminPanel',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-default navbar-fixed-top',
         ],
     ]);
+
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => Yii::t('backend','nav.home'), 'url' => ['/site/index']],
     ];
-    $menuItems[] = ['label' => 'Users', 'url' => ['/user/index']];
+
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => Yii::t('backend','nav.login'), 'url' => ['/site/login']];
     } else {
 
         $menuItems[] = [
             'label' => Yii::t('backend','nav.dictionary'),
             'items' =>[
                 [
-                    'label' => Yii::t('backend','Translations'),
+                    'label' => Yii::t('backend','nav.dictionary.translations'),
                     'url' => ['/translate'],
-
                 ],
                 [
                     'label' => Yii::t('backend','nav.dictionary.region'),
                     'url' => ['/dictionary/table?name=Regions'],
                 ],
-                [
-                    'label' => Yii::t('backend','nav.dictionary.plantClasses'),
-                    'url' => ['/dictionary/table?name=PlantClasses'],
-                ],
-                [
-                    'label' => Yii::t('backend','nav.dictionary.plantSorts'),
-                    'url' => ['/dictionary/table?name=PlantSorts'],
-                ],
-                [
-                    'label' => Yii::t('backend','nav.dictionary.Plants'),
-                    'url' => ['/dictionary/table?name=Plants'],
-                ],
-
-                [
-                    'label' => Yii::t('backend','nav.dictionary.Nurseries'),
-                    'url' => ['/dictionary/table?name=Nurseries'],
-                ],
-                [
-                    'label' => Yii::t('backend','nav.dictionary.PlantSpecies'),
-                    'url' => ['/dictionary/table?name=PlantSpecies'],
-                ],
-
             ],
         ];
 
@@ -89,18 +68,17 @@ AppAsset::register($this);
                 ]
             ]
         ];
+
         $menuItems[] = [
             'label' => Yii::t('backend','nav.nurseries'),
             'url' => ['/nurseries'],
         ];
 
         $menuItems[] = [
-            'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+            'label' => Yii::t('backeand','nav.logout.{username}', ['username' => Yii::$app->user->identity->username]),
             'url' => ['/site/logout'],
             'linkOptions' => ['data-method' => 'post']
         ];
-
-
 
     }
     echo Nav::widget([

@@ -1,6 +1,7 @@
 <?php
 return [
-    'language' => 'ru',
+    'language' => 'ru-RU',
+    'sourceLanguage' => 'key',
     'bootstrap' => [],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
@@ -28,7 +29,7 @@ return [
         ],
         'urlManager' => [
             'class' => 'codemix\localeurls\UrlManager',
-            'languages' => ['ru'],
+            'languages' => ['ru-RU'],
             'enablePrettyUrl' => true,
             'showScriptName'  => false,
             'enableDefaultLanguageUrlCode' => false,
@@ -37,7 +38,7 @@ return [
         ],
         'i18n' => [
             'class' => Zelenin\yii\modules\I18n\components\I18N::className(),
-            'languages' => ['ru'],
+            'languages' => ['ru-RU','uk-UA'],
             'translations' => [
                 'yii' => [
                     'class' => yii\i18n\DbMessageSource::className()

@@ -74,7 +74,7 @@ echo Breadcrumbs::widget(['links' => [
 </div>
 
 <script type="text/javascript">
-    var lang = 'ru';
+    var lang = 'ru-RU';
 
     function messageFormatter(item) {
         return item[lang].translation;
