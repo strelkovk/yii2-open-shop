@@ -73,18 +73,30 @@ AppAsset::register($this);
         ]);
         $menuItems = [
             ['label' => Yii::t('view','menu.home'), 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => Yii::t('view','menu.about'), 'url' => ['/site/about']],
+            ['label' => Yii::t('view','menu.contact'), 'url' => ['/site/contact']],
         ];
+        $logout = ' . Yii::$app->user->identity->username .';
+
         if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-            $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+            $menuItems[] = ['label' => Yii::t('view','menu.signup'), 'url' => ['/site/signup']];
+            $menuItems[] = ['label' => Yii::t('view','menu.login'), 'url' => ['/site/login']];
         } else {
-            $menuItems[] = [
-                'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                'url' => ['/site/logout'],
-                'linkOptions' => ['data-method' => 'post']
-            ];
+//            $logoutStr = Yii::t(('app', 'Hello, {username}!', [
+//                'username' => Yii::$app->user->identity->username,
+//            ]);
+//                var_dump($logoutStr);
+
+            $menuItems[] = array(
+//                'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+//                'label' => Yii::t('view','menu.logout','{'. Yii::$app->user->identity->username .'}'),
+//                'label' => Yii::t('view','menu.logout',$logout') ,
+
+
+                'label' =>  Yii::t('view','menu.logout{username}',['username' => Yii::$app->user->identity->username]),
+                'url' => array('/site/logout'),
+                'linkOptions' => array('data-method' => 'post')
+            );
         }
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
