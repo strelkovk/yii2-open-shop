@@ -20,8 +20,13 @@ class AppAsset extends AssetBundle
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
     public $css = [
 //        'css/site.css',
+        'css/owl-gallery/owl.carousel.css',
+        'css/owl-gallery/owl.theme.css',
+        'css/owl-gallery/owl.transitions.css',
     ];
     public $js = [
+        'js/owl.carousel.min.js',
+        'js/main.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

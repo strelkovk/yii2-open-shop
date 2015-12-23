@@ -77,17 +77,8 @@ AppAsset::register($this);
             $menuItems[] = ['label' => Yii::t('view','menu.signup'), 'url' => ['/site/signup']];
             $menuItems[] = ['label' => Yii::t('view','menu.login'), 'url' => ['/site/login']];
         } else {
-//            $logoutStr = Yii::t(('app', 'Hello, {username}!', [
-//                'username' => Yii::$app->user->identity->username,
-//            ]);
-//                var_dump($logoutStr);
-
+//
             $menuItems[] = array(
-//                'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-//                'label' => Yii::t('view','menu.logout','{'. Yii::$app->user->identity->username .'}'),
-//                'label' => Yii::t('view','menu.logout',$logout') ,
-
-
                 'label' =>  Yii::t('view','menu.logout{username}',['username' => Yii::$app->user->identity->username]),
                 'url' => array('/site/logout'),
                 'linkOptions' => array('data-method' => 'post')
@@ -276,17 +267,7 @@ AppAsset::register($this);
     <!-- End Header -->
 
     <!-- Start Content -->
-    <div id="content">
-        <div class="container">
-            <div class="page-content">
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <?= $content ?>
-            </div>
-        </div>
-    </div>
+         <?= $content ?>
     <!-- End Content -->
 
     <?= $this->render('/base/footer') ?>

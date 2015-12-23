@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "65d1cff155da43854ac6269b5e55b14b",
+    "hash": "dec8024f60e45b51e2b48c55442201cb",
     "content-hash": "52d85c5f7f8f4182f7166a8eee17ea8d",
     "packages": [
         {
@@ -58,16 +58,16 @@
         },
         {
             "name": "bower-asset/bootstrap-select",
-            "version": "v1.8.1",
+            "version": "v1.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silviomoreto/bootstrap-select.git",
-                "reference": "a118630b4b880ba5042b648a002726976fd82a05"
+                "reference": "6f7b38c70b01c5879d403fcd679dc37c45226011"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silviomoreto/bootstrap-select/zipball/a118630b4b880ba5042b648a002726976fd82a05",
-                "reference": "a118630b4b880ba5042b648a002726976fd82a05",
+                "url": "https://api.github.com/repos/silviomoreto/bootstrap-select/zipball/6f7b38c70b01c5879d403fcd679dc37c45226011",
+                "reference": "6f7b38c70b01c5879d403fcd679dc37c45226011",
                 "shasum": ""
             },
             "require": {
