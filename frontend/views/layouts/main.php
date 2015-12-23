@@ -265,10 +265,26 @@ AppAsset::register($this);
         <!-- End Header ( Logo & Naviagtion ) -->
     </header>
     <!-- End Header -->
+<?php if (isset($this->blocks['content'])): ?>
+    <?= $this->blocks['content'] ?>
+<?php else: ?>
+    <div id="content">
+        <div class="container">
+            <div class="page-content">
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <!-- Start Content -->
+                <?= $content ?>
+                <!-- End Content -->
+            </div>
+        </div>
+    </div>
 
-    <!-- Start Content -->
-         <?= $content ?>
-    <!-- End Content -->
+<?php endif; ?>
+
+
 
     <?= $this->render('/base/footer') ?>
 

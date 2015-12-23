@@ -4,19 +4,13 @@
 
 $this->title = 'My Yii Application';
 ?>
+<?php $this->beginBlock('content'); ?>
+
+
+
+
 <div class="site-index">
-    <div id="content">-->
-        <div class="container">
-            <div class="row">
-                <div class="page-content">
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
     <!-- Begin Home Page Slider -->
@@ -29,65 +23,34 @@ $this->title = 'My Yii Application';
 
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
-                        <li data-target="#main-slide" data-slide-to="0" class="active"></li>
-                        <li data-target="#main-slide" data-slide-to="1"></li>
-                        <li data-target="#main-slide" data-slide-to="2"></li>
+                        <?php foreach ($items as $key => $item):?>
+                            <li data-target="#main-slide" data-slide-to="<?= $key ?>"></li>
+                        <?php endforeach ?>
                     </ol>
                     <!--/ Indicators end-->
 
                     <!-- Carousel inner -->
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <img class="img-responsive" src="img/slider1.jpg" alt="slider">
-                            <div class="slider-content">
-                                <div class="col-md-12 text-center">
-                                    <h2 class="animated2">
-                                        <span>Welcome to <strong>Margo</strong></span>
-                                    </h2>
-                                    <h3 class="animated3">
-                                        <span>The ultimate aim of your business</span>
-                                    </h3>
-                                    <p class="animated4"><a href="#" class="slider btn btn-system btn-large">Check Now</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/ Carousel item end -->
-                        <div class="item">
-                            <img class="img-responsive" src="img/slider2.jpg" alt="slider">
-                            <div class="slider-content">
-                                <div class="col-md-12 text-center">
-                                    <h2 class="animated4">
-                                        <span><strong>Margo</strong> for the highest</span>
-                                    </h2>
-                                    <h3 class="animated5">
-                                        <span>The Key of your Success</span>
-                                    </h3>
-                                    <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Buy Now</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/ Carousel item end -->
-                        <div class="item">
-                            <img class="img-responsive" src="img/slider3.jpg" alt="slider">
-                            <div class="slider-content">
-                                <div class="col-md-12 text-center">
-                                    <h2 class="animated7 white">
-                                        <span>The way of <strong>Success</strong></span>
-                                    </h2>
-                                    <h3 class="animated8 white">
-                                        <span>Why you are waiting</span>
-                                    </h3>
-                                    <div class="">
-                                        <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+                        <?php foreach ($items as $key => $item):?>
+                           <div class="item <?= $key>0 ? : 'active' ?>">
+
+                                <img class="img-responsive" src='/img/<?= $item['img'] ?>.jpg' alt="slider">
+                                <div class="slider-content">
+                                    <div class="col-md-12 text-center">
+                                        <h2 class="animated2">
+                                            <?= $item['title'] ?>
+                                        </h2>
+                                        <h3 class="animated3">
+                                            <?= $item['note'] ?>
+                                        </h3>
+                                        <p class="animated4"><a href="<?=$item['url']?>" class="slider btn btn-system btn-large"><?= $item['button'] ?></a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--/ Carousel item end -->
-                    </div>
-                    <!-- Carousel inner end-->
+
+                        <?php endforeach ?>
+
 
                     <!-- Controls -->
                     <a class="left carousel-control" href="#main-slide" data-slide="prev">
@@ -147,3 +110,6 @@ $this->title = 'My Yii Application';
         </div>
     </div>
 </div>
+
+
+<?php $this->endBlock(); ?>
