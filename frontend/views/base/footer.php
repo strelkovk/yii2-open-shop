@@ -83,48 +83,48 @@
                     <h4>Flicker Feed<span class="head-line"></span></h4>
                     <ul class="flickr-list">
                         <li>
-                            <a href="images/flickr-01.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-01.jpg">
+                            <a href="/img/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                         <li>
-                            <a href="images/flickr-02.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-02.jpg">
+                            <a href="img/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                         <li>
-                            <a href="images/flickr-03.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-03.jpg">
+                            <a href="img/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                         <li>
-                            <a href="images/flickr-04.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-04.jpg">
+                            <a href="img/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                         <li>
-                            <a href="images/flickr-05.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-05.jpg">
+                            <a href="img/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                         <li>
-                            <a href="images/flickr-06.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-06.jpg">
+                            <a href="img/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                         <li>
-                            <a href="images/flickr-07.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-07.jpg">
+                            <a href="img/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                         <li>
-                            <a href="images/flickr-08.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-08.jpg">
+                            <a href="img/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                         <li>
-                            <a href="images/flickr-09.jpg" class="lightbox">
-                                <img alt="" src="images/flickr-09.jpg">
+                            <a href="mg/flickr-01.jpg" class="lightbox">
+                                <img alt="" src="/img/flickr-01.jpg">
                             </a>
                         </li>
                     </ul>
