@@ -5756,4 +5756,8 @@ ul.footer-nav li a:hover {
 .navbar-collapse {
     max-height: 340px;
 }
-
+/*begin slider home*/
+#home {
+    margin-top: 200px;
+}
+/*end slider home*/
