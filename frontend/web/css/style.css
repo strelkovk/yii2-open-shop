@@ -5761,3 +5761,77 @@ ul.footer-nav li a:hover {
     margin-top: 200px;
 }
 /*end slider home*/
+
+/*begin signup регистрация*/
+.site-signup h1{
+    font-family: 'Open Sans', sans-serif;
+    color: #444;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+}
+/*.site-signup h4{*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*color: #444;*/
+    /*font-size: 13px;*/
+/*}*/
+
+
+.site-signup .classic-title {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+    color: #444;
+}
+.site-signup .classic-title span{
+    border-bottom: 1px solid #ee3733;
+    font-weight: 400;
+    font-size: 13px;
+    color: #737373;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+}
+
+.site-signup input{
+    text-shadow: none;
+    color: #666fb5;
+    font-size: 13px;
+    /*font-family: 'Open Sans', sans-serif;*/
+}
+.site-signup input[type=text]{
+    color: #666fb5;
+    font-weight: 500;
+    font-size: 13px;
+}
+.site-signup .form-control {
+    color: #666fb5;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    outline: none;
+    padding: 7px 14px;
+    margin-bottom: 10px;
+    text-shadow: none;
+    box-shadow:none;
+}
+
+
+.site-signup .form-control:focus {
+    box-shadow:none;
+    border-color: #eee;
+
+}
+.s-icons {
+    margin-top: 35px;
+}
+.s-icons img{
+    margin: 10px;
+}
+.s-icons img:hover{
+    opacity: .7;
+}
+/*end signup регистрация*/
