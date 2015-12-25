@@ -137,7 +137,7 @@
             <!-- Start Contact Widget -->
             <div class="col-md-3">
                 <div class="footer-widget contact-widget">
-                    <h4><img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
+                    <h4><img src="/img/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     <ul>
                         <li><span>Phone Number:</span> +01 234 567 890</li>
