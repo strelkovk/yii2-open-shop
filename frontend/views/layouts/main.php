@@ -36,9 +36,9 @@ AppAsset::register($this);
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                         <ul class="contact-details">
-                            <li><a href="#"><i class="fa fa-map-marker"></i> House-54/A, London, UK</a> </li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i> info@yourcompany.com</a> </li>
-                            <li><a href="#"><i class="fa fa-phone"></i> +12 345 678 000</a> </li>
+                            <li><a href="#"><i class="fa fa-map-marker"></i><?= Yii::t('view','header.address') ?></a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i><?= Yii::t('view','header.email') ?></a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i><?= Yii::t('view','header.phone') ?></a></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
