@@ -5830,20 +5830,20 @@ ul.footer-nav li a:hover {
 }
 
 .s-icons {
-    margin-top: 40px;
+    margin-top: 47px;
     font-size: 35px;
     color: #666;
-    /*border: none;*/
 }
 .s-icons ul a{
     color: #fff;
     padding: 10px;
     border: none;
 }
+
 .s-icons ul li{
     margin: 0 5px;
-    /*border: none;*/
 }
+
 .s-icons ul li a i{
     border: none;
 }
@@ -5853,6 +5853,12 @@ ul.footer-nav li a:hover {
 }
 .s-icons ul.social-list li a:hover{
     opacity: 1
+}
+         /*ul.social-list li a i*/
+.s-icons ul.social-list li a:active,
+.s-icons ul.social-list li a:visited {
+    text-decoration: none;
+
 }
 
 .s-icons ul.social-list li a.facebook {
