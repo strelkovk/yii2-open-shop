@@ -15,8 +15,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-9">
 
             <div class="classic-title">
-<!--                <span><h1>--><?//= Html::encode($this->title) ?><!--</h1></span>-->
-<!--                <span>Please fill out the following fields to signup:</span>-->
 
                 <span><h1><?= Yii::t('view','signup.info')?></h1></span>
                 <span><?= Yii::t('view','signup.title.info')?></span>
@@ -40,10 +38,14 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-lg-3 text-center">
             <div class="s-icons">
-                <a href="#"><img src="/img/s-icons_facebook.jpg" alt=""></a>
-                <a href="#"><img src="/img/s-icons_twitter.jpg" alt=""></a>
-                <a href="#"><img src="/img/s-icons_google+.jpg" alt=""></a>
-                <a href="#"><img src="/img/s-icons_vkontakte.jpg" alt=""></a>
+                <ul class="social-list">
+                    <li> <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a> </li>
+                    <li> <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a> </li>
+                    <li> <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a> </li>
+                    <li> <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa-skype"></i></a> </li>
+                </ul>
+
+
             </div>
         </div>
     </div>
