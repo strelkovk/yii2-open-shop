@@ -5836,31 +5836,39 @@ ul.footer-nav li a:hover {
     /*border: none;*/
 }
 .s-icons ul a{
-    color: #666;
+    color: #fff;
     padding: 10px;
     border: none;
 }
 .s-icons ul li{
-    /*margin: 10px;*/
+    margin: 0 5px;
     /*border: none;*/
 }
 .s-icons ul li a i{
     border: none;
 }
+
+.s-icons ul.social-list li a{
+    opacity: .8
+}
+.s-icons ul.social-list li a:hover{
+    opacity: 1
+}
+
 .s-icons ul.social-list li a.facebook {
     background-color: #507CBE;
-    opacity: .8;
 }
+
 .s-icons ul.social-list li a.twitter {
     background-color: #63CDF1;
-    opacity: .8;
-}
+   }
+
 .s-icons ul.social-list li a.google {
     background-color: #F16261;
-    opacity: .8;
 }
 
 .s-icons ul.social-list li a.skype {
     background-color: #36C4F3;
-    opacity: .8;
-}
+ }
+
+
