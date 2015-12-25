@@ -5825,14 +5825,42 @@ ul.footer-nav li a:hover {
     border-color: #eee;
 
 }
+.s-icons ul.social-list li:last-child a i {
+    border: none;
+}
+
 .s-icons {
     margin-top: 40px;
     font-size: 35px;
     color: #666;
+    /*border: none;*/
 }
 .s-icons ul a{
     color: #666;
+    padding: 10px;
+    border: none;
 }
 .s-icons ul li{
-    margin: 0 10px;
+    /*margin: 10px;*/
+    /*border: none;*/
+}
+.s-icons ul li a i{
+    border: none;
+}
+.s-icons ul.social-list li a.facebook {
+    background-color: #507CBE;
+    opacity: .8;
+}
+.s-icons ul.social-list li a.twitter {
+    background-color: #63CDF1;
+    opacity: .8;
+}
+.s-icons ul.social-list li a.google {
+    background-color: #F16261;
+    opacity: .8;
+}
+
+.s-icons ul.social-list li a.skype {
+    background-color: #36C4F3;
+    opacity: .8;
 }
