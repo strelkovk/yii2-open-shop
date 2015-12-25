@@ -5826,12 +5826,13 @@ ul.footer-nav li a:hover {
 
 }
 .s-icons {
-    margin-top: 35px;
+    margin-top: 40px;
+    font-size: 35px;
+    color: #666;
 }
-.s-icons img{
-    margin: 10px;
+.s-icons ul a{
+    color: #666;
 }
-.s-icons img:hover{
-    opacity: .7;
+.s-icons ul li{
+    margin: 0 10px;
 }
-/*end signup регистрация*/
