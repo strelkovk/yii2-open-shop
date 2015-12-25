@@ -4171,7 +4171,6 @@ footer a:hover {
 
 .twitter-widget a:hover {
     color: #43B9CD;
-    text-decoration: underline;
 }
 
 .twitter-widget ul li {
@@ -5763,26 +5762,28 @@ ul.footer-nav li a:hover {
 /*end slider home*/
 
 /*begin signup регистрация*/
-.site-signup h1{
+.site-signup h1,
+.site-login h1,
+.site-contact h1,
+.social-title {
     font-family: 'Open Sans', sans-serif;
     color: #444;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
 }
-/*.site-signup h4{*/
-    /*font-family: 'Open Sans', sans-serif;*/
-    /*color: #444;*/
-    /*font-size: 13px;*/
-/*}*/
 
 
-.site-signup .classic-title {
+.site-signup .classic-title,
+.site-contact .classic-title,
+.site-login .classic-title {
     border-bottom: 1px solid #eee;
     padding-bottom: 6px;
     color: #444;
 }
-.site-signup .classic-title span{
+.site-signup .classic-title span,
+.site-contact .classic-title span,
+.site-login .classic-title span{
     border-bottom: 1px solid #ee3733;
     font-weight: 400;
     font-size: 13px;
@@ -5791,18 +5792,23 @@ ul.footer-nav li a:hover {
     margin-bottom: 0;
 }
 
-.site-signup input{
+.site-signup input,
+.site-contact input,
+.site-login input{
     text-shadow: none;
     color: #666fb5;
     font-size: 13px;
-    /*font-family: 'Open Sans', sans-serif;*/
 }
-.site-signup input[type=text]{
+.site-signup input[type=text],
+.site-contact input[type=text],
+.site-login input[type=text]{
     color: #666fb5;
     font-weight: 500;
     font-size: 13px;
 }
-.site-signup .form-control {
+.site-signup .form-control,
+.site-contact .form-control,
+.site-login .form-control {
     color: #666fb5;
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
@@ -5820,7 +5826,11 @@ ul.footer-nav li a:hover {
 }
 
 
-.site-signup .form-control:focus {
+.site-signup .form-control:focus,
+.site-contact .form-control:focus,
+.site-contact #contact-form input[type="text"]:focus,
+.site-contact #contact-form textarea:focus,
+.site-login .form-control:focus {
     box-shadow:none;
     border-color: #eee;
 
@@ -5854,8 +5864,9 @@ ul.footer-nav li a:hover {
 .s-icons ul.social-list li a:hover{
     opacity: 1
 }
-         /*ul.social-list li a i*/
+
 .s-icons ul.social-list li a:active,
+.s-icons ul.social-list li a:focus,
 .s-icons ul.social-list li a:visited {
     text-decoration: none;
 
@@ -5876,5 +5887,8 @@ ul.footer-nav li a:hover {
 .s-icons ul.social-list li a.skype {
     background-color: #36C4F3;
  }
-
-
+.social-title {
+    margin-top: 0px;
+}
+/*end reg social*/
+/*end signup регистрация*/
