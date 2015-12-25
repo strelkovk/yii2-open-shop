@@ -5831,13 +5831,8 @@ ul.footer-nav li a:hover {
     color: #666;
 }
 .s-icons ul a{
-
     color: #666;
 }
-/*.s-icons img{*/
-    /*margin: 10px;*/
-/*}*/
-/*.s-icons img:hover{*/
-    /*opacity: .7;*/
-/*}*/
-/*end signup регистрация*/
+.s-icons ul li{
+    margin: 0 10px;
+}
