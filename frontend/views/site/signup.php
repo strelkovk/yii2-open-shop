@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php ActiveForm::end(); ?>
         </div>
         <div class="col-lg-3 text-center">
+            <div class="social-title"><span><h1><?= Yii::t('view','signup.social')?></h1></span></div>
             <div class="s-icons">
                 <ul class="social-list">
                     <li> <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a> </li>
@@ -44,8 +45,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     <li> <a class="google itl-tooltip" data-placement="bottom" title="Google Plus" href="#"><i class="fa fa-google-plus"></i></a> </li>
                     <li> <a class="skype itl-tooltip" data-placement="bottom" title="Skype" href="#"><i class="fa fa fa-vk"></i></a> </li>
                 </ul>
-
-
             </div>
         </div>
     </div>
