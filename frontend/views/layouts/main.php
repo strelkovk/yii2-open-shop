@@ -72,6 +72,7 @@ AppAsset::register($this);
                 ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
                 ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
             ]],
+            ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
             ['label' => Yii::t('view','menu.contact'), 'url' => ['/site/contact']],
             ['label' => Yii::t('view','menu.catalog'), 'url' => ['/catalog/index']],
 
