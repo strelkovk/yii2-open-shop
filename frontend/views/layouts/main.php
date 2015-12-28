@@ -68,10 +68,13 @@ AppAsset::register($this);
         ]);
         $menuItems = [
             ['label' => Yii::t('view','menu.home'), 'url' => ['/site/index']],
-            ['label' => Yii::t('view','menu.about'), 'url' => ['/site/about']],
+            ['label' => Yii::t('view','menu.about'), 'url' => ['/site/about'], 'about'=> [
+                ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
+                ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
+            ]],
             ['label' => Yii::t('view','menu.contact'), 'url' => ['/site/contact']],
             ['label' => Yii::t('view','menu.catalog'), 'url' => ['/catalog/index']],
-            ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
+
             ['label' => Yii::t('view','menu.actions'), 'url' => ['/actions/index']],
             ['label' => Yii::t('view','menu.order'), 'url' => ['/order/index']],
             ['label' => Yii::t('view','menu.service'), 'url' => ['/service/index']],
