@@ -583,7 +583,8 @@ ul.social-list li:last-child a i {
 }
 
 .navbar-brand > img {
-    height: 70px;
+    height: 50px;
+    margin-top: 12px;
 }
 
 .navbar-default .navbar-nav {
@@ -5761,7 +5762,7 @@ ul.footer-nav li a:hover {
 }
 /*end slider home*/
 
-/*begin signup регистрация*/
+/*begin signup пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 .site-signup h1,
 .site-login h1,
 .site-request-password-reset h1,
@@ -5898,4 +5899,4 @@ ul.footer-nav li a:hover {
     margin-top: 0px;
 }
 /*end reg social*/
-/*end signup регистрация*/
+/*end signup пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
