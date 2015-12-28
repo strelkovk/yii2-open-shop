@@ -9,7 +9,7 @@ $this->title = 'My Yii Application';
 ?>
 <?php $this->beginBlock('content'); ?>
 
-<div class="site-index">
+<div class="news-index">
         <br>
         <br>
         <br>
