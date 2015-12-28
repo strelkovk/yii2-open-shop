@@ -9,10 +9,7 @@ $this->title = 'My Yii Application';
 ?>
 <?php $this->beginBlock('content'); ?>
 
-
-
-
-    <div class="site-index">
+<div class="actions-index">
         <br>
         <br>
         <br>
@@ -22,10 +19,29 @@ $this->title = 'My Yii Application';
         <br>
         <br>
         <br>
-        <h1>Actions</h1>
-
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Actions</h1>
+                <div class="actions">
+                    <div class="actions-header">
+                        Header
+                    </div>
+                    <div class="actions-date">
+                        Начало акции: Январь 2015
+                    </div
+                    <div class="actions-date">
+                        Окончание акции: Февраль 2015
+                    </div>
+                    <div class="actions-text">
+                        text
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+</div>
 
 
 <?php $this->endBlock(); ?>

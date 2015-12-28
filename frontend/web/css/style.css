@@ -5764,6 +5764,7 @@ ul.footer-nav li a:hover {
 /*begin signup регистрация*/
 .site-signup h1,
 .site-login h1,
+.site-request-password-reset h1,
 .site-contact h1,
 .social-title {
     font-family: 'Open Sans', sans-serif;
@@ -5776,13 +5777,15 @@ ul.footer-nav li a:hover {
 
 .site-signup .classic-title,
 .site-contact .classic-title,
-.site-login .classic-title {
+.site-login .classic-title,
+.site-request-password-reset .classic-title {
     border-bottom: 1px solid #eee;
     padding-bottom: 6px;
     color: #444;
 }
 .site-signup .classic-title span,
 .site-contact .classic-title span,
+.site-request-password-reset .classic-title span,
 .site-login .classic-title span{
     border-bottom: 1px solid #ee3733;
     font-weight: 400;
@@ -5794,6 +5797,7 @@ ul.footer-nav li a:hover {
 
 .site-signup input,
 .site-contact input,
+.site-request-password-reset input,
 .site-login input{
     text-shadow: none;
     color: #666fb5;
@@ -5801,6 +5805,7 @@ ul.footer-nav li a:hover {
 }
 .site-signup input[type=text],
 .site-contact input[type=text],
+.site-request-password-reset input[type=text],
 .site-login input[type=text]{
     color: #666fb5;
     font-weight: 500;
@@ -5808,6 +5813,7 @@ ul.footer-nav li a:hover {
 }
 .site-signup .form-control,
 .site-contact .form-control,
+.site-request-password-reset .form-control,
 .site-login .form-control {
     color: #666fb5;
     font-size: 13px;
@@ -5830,7 +5836,8 @@ ul.footer-nav li a:hover {
 .site-contact .form-control:focus,
 .site-contact #contact-form input[type="text"]:focus,
 .site-contact #contact-form textarea:focus,
-.site-login .form-control:focus {
+.site-login .form-control:focus,
+.site-request-password-reset .form-control:focus {
     box-shadow:none;
     border-color: #eee;
 
