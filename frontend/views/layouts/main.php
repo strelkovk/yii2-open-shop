@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -53,9 +54,9 @@ AppAsset::register($this);
                     <div class="col-md-6">
                         <!-- Start Contact Info -->
                         <ul class="contact-details">
-                            <li><a href="#"><i class="fa fa-map-marker"></i><?= Yii::t('view','header.address') ?></a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i><?= Yii::t('view','header.email') ?></a></li>
-                            <li><a href="#"><i class="fa fa-phone"></i><?= Yii::t('view','header.phone') ?></a></li>
+                            <li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;<?= Yii::t('view','header.address') ?></a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;<?= Yii::t('view','header.email') ?></a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i>&nbsp;&nbsp;<?= Yii::t('view','header.phone') ?></a></li>
                         </ul>
                         <!-- End Contact Info -->
                     </div>
@@ -75,49 +76,86 @@ AppAsset::register($this);
         </div>
         <!-- End Top Bar -->
         <!-- Start Header ( Logo & Naviagtion ) -->
+
         <?php
+
+
+//        function isItemActive($item)
+//        {
+//            $router = Yii::$app->controller->getRoute();
+//
+//            if (isset($item['url']) && is_array($item['url']) && isset($item['url'][0])) {
+//                $route = $item['url'][0];
+//                if ($route[0] !== '/' && Yii::$app->controller) {
+//                    $route = Yii::$app->controller->module->getUniqueId() . '/' . $route;
+//                }
+//                if (ltrim($route, '/') !== $router) {
+//                    return false;
+//                }
+//                unset($item['url']['#']);
+//                if (count($item['url']) > 1) {
+//                    $params = $item['url'];
+//                    unset($params[0]);
+////                    foreach ($params as $name => $value) {
+////                        if ($value !== null && (!isset($this->params[$name]) || $this->params[$name] != $value)) {
+//                            return false;
+////                        }
+////                    }
+//                }
+//
+//                return true;
+//            }
+//
+//            return false;
+//        }
+
+
+        $menuItems = [
+            ['label' => Yii::t('view','menu.catalog'), 'url' => ['/catalog/index']],
+            ['label' => Yii::t('view','menu.service'), 'url' => ['/service/index']],
+
+            ['label' => Yii::t('view','menu.about'), 'url' => ['/site/about'],
+                'items'=> [
+                    ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
+                    ['label' => Yii::t('view','menu.actions'), 'url' => ['/actions/index']],
+                ]
+            ],
+            ['label' => Yii::t('view','menu.contact'), 'url' => ['/site/contact']],
+        ];
+        $logout = ' . Yii::$app->user->identity->username .';
+
+        if (Yii::$app->user->isGuest) {
+//            $menuItems[] = ['label' => Yii::t('view','menu.signup'), 'url' => ['/site/signup']];
+            $menuItems[] = ['label' => Yii::t('view','menu.login'), 'url' => ['/site/login']];
+        } else {
+            $menuItems[] = array(
+                'label' =>  Yii::t('view','{username}',['username' => Yii::$app->user->identity->username]),
+                'url' => ['/site/profile'],
+                'items'=> [
+                    ['label' => Yii::t('view','menu.settings'), 'url' => ['/site/settings']],
+                    ['label' => Yii::t('view','menu.order'), 'url' => ['/order/index']],
+                    ['label' => Yii::t('view','menu.logout'), 'url' => ['/site/logout'], 'linkOptions' => ['data-method' => 'post']],
+                ],
+            );
+        }
+
         NavBar::begin([
-            'brandLabel' => '<img src="/img/logo-dtrank.png" height="60">' ,
+            'brandLabel' => '<img src="/img/logo-dtrank.png">' ,
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar navbar-default navbar-top',
             ],
         ]);
-        $menuItems = [
-            ['label' => Yii::t('view','menu.home'), 'url' => ['/site/index']],
-            ['label' => Yii::t('view','menu.about'), 'url' => ['/site/about'], 'about'=> [
-                ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
-                ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
-            ]],
-            ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
-            ['label' => Yii::t('view','menu.contact'), 'url' => ['/site/contact']],
-            ['label' => Yii::t('view','menu.catalog'), 'url' => ['/catalog/index']],
 
-            ['label' => Yii::t('view','menu.actions'), 'url' => ['/actions/index']],
-            ['label' => Yii::t('view','menu.order'), 'url' => ['/order/index']],
-            ['label' => Yii::t('view','menu.service'), 'url' => ['/service/index']],
-        ];
-        $logout = ' . Yii::$app->user->identity->username .';
-
-        if (Yii::$app->user->isGuest) {
-            $menuItems[] = ['label' => Yii::t('view','menu.signup'), 'url' => ['/site/signup']];
-            $menuItems[] = ['label' => Yii::t('view','menu.login'), 'url' => ['/site/login']];
-        } else {
-//
-            $menuItems[] = array(
-                'label' =>  Yii::t('view','menu.logout{username}',['username' => Yii::$app->user->identity->username]),
-                'url' => array('/site/logout'),
-                'linkOptions' => array('data-method' => 'post')
-            );
-        }
         echo Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => $menuItems,
         ]);
         NavBar::end();
+
         ?>
 
-        <?php /* ?>
+        <?php  /* ?>
 
         <div class="navbar navbar-default navbar-top">
             <div class="container">
@@ -125,7 +163,7 @@ AppAsset::register($this);
                     <!-- Stat Toggle Nav Link For Mobiles -->
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <i class="fa fa-bars"></i> </button>
                     <!-- End Toggle Nav Link For Mobiles -->
-                    <a class="navbar-brand" href="index.html"><img alt="" src="images/margo.png"></a>
+                    <a class="navbar-brand" href="/"><img alt="" src="/img/logo-dtrank.png"></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <!-- Stat Search -->
@@ -140,63 +178,33 @@ AppAsset::register($this);
 
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li> <a href="index.html">Home</a>
+                        <?php foreach($menuItems as $menuItem):
+                            ?>
+                        <li>
+
+                            <?php $linkOptions = isset($menuItem['linkOptions']) ? $menuItem['linkOptions'] : [];
+
+                                $active = isItemActive($menuItem);
+                                var_dump($active);
+                            ?>
+                            <?= Html::a($menuItem['label'], $menuItem['url'], $linkOptions) ?>
+                            <?php if(!empty($menuItem['items'])): ?>
                             <ul class="dropdown">
-                                <li><a href="index.html">Home Main Version</a></li>
-                                <li><a href="index-01.html">Home Version 1</a></li>
-                                <li><a href="index-02.html">Home Version 2</a></li>
-                                <li><a href="index-03.html">Home Version 3</a></li>
-                                <li><a href="index-04.html">Home Version 4</a></li>
-                                <li><a href="index-05.html">Home Version 5</a></li>
-                                <li><a href="index-06.html">Home Version 6</a></li>
-                                <li><a href="index-07.html">Home Version 7</a></li>
-                                <!-- <li><a href="index-08.html">Home Version 8</a></li> -->
+                                <?php foreach((array) $menuItem['items'] as $subItem): ?>
+                                <li>
+                                    <?php $linkOptions = isset($subItem['linkOptions']) ? $subItem['linkOptions'] : []; ?>
+                                    <?= Html::a($subItem['label'], $subItem['url'], $linkOptions) ?>
+                                </li>
+                                <?php endforeach; ?>
                             </ul>
+                            <?php endif; ?>
                         </li>
-                        <li> <a class="active" href="about.html">Pages</a>
-                            <ul class="dropdown">
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li><a class="active" href="404.html">404 Page</a></li>
-                            </ul>
-                        </li>
-                        <li> <a href="#">Shortcodes</a>
-                            <ul class="dropdown">
-                                <li><a href="tabs.html">Tabs</a></li>
-                                <li><a href="buttons.html">Buttons</a></li>
-                                <li><a href="action-box.html">Action Box</a></li>
-                                <li><a href="testimonials.html">Testimonials</a></li>
-                                <li><a href="latest-posts.html">Latest Posts</a></li>
-                                <li><a href="latest-projects.html">Latest Projects</a></li>
-                                <li><a href="pricing.html">Pricing Tables</a></li>
-                                <!-- <li><a href="animated-graphs.html">Animated Graphs</a></li> -->
-                                <li><a href="accordion-toggles.html">Accordion & Toggles</a></li>
-                            </ul>
-                        </li>
-                        <li> <a href="portfolio-3.html">Portfolio</a>
-                            <ul class="dropdown">
-                                <li><a href="portfolio-2.html">2 Columns</a></li>
-                                <li><a href="portfolio-3.html">3 Columns</a></li>
-                                <li><a href="portfolio-4.html">4 Columns</a></li>
-                                <li><a href="single-project.html">Single Project</a></li>
-                            </ul>
-                        </li>
-                        <li> <a href="blog.html">Blog</a>
-                            <ul class="dropdown">
-                                <li><a href="blog.html">Blog - right Sidebar</a></li>
-                                <li><a href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                                <li><a href="single-post.html">Blog Single Post</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <?php endforeach; ?>
                     </ul>
 
                     <!-- End Navigation List -->
                 </div>
             </div>
- <? */ ?>
 
             <!-- Mobile Menu Start -->
             <ul class="wpb-mobile-menu">
@@ -289,6 +297,7 @@ AppAsset::register($this);
 
         </div>
         <!-- End Header ( Logo & Naviagtion ) -->
+  <?php */  ?>
     </header>
     <!-- End Header -->
 <?php if (isset($this->blocks['content'])): ?>
@@ -315,8 +324,6 @@ AppAsset::register($this);
     <?= $this->render('/base/footer') ?>
 
 </div>
-
-<?php /* ?>
 
 <div class="wrap">
 

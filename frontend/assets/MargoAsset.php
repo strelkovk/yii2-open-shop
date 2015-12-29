@@ -26,6 +26,7 @@ class MargoAsset extends AssetBundle
         'css/colors/red.css',
     ];
     public $js = [
+        'js/jquery.slicknav.js',
     ];
     public $depends = [
         'yii\bootstrap\BootstrapAsset',
