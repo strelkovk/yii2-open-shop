@@ -587,14 +587,6 @@ ul.social-list li:last-child a i {
     margin-top: 12px;
 }
 
-.navbar-default .navbar-nav {
-    margin-right: 10px !important;
-    position: relative;
-    transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-}
 
 .navbar-default .navbar-nav > li {
     margin-left: 6px;
@@ -618,10 +610,12 @@ ul.social-list li:last-child a i {
     font-weight: 400;
 }
 
+.navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > li.active > a,
 .navbar-default .navbar-nav > li > a.active,
 .navbar-default .navbar-nav > li:hover > a {
     border-bottom: 2px solid;
+    background: none;
 }
 
 .navbar-default .navbar-nav > li > a i {

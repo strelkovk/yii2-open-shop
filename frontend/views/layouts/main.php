@@ -116,11 +116,11 @@ AppAsset::register($this);
 
             ['label' => Yii::t('view','menu.about'), 'url' => ['/site/about'],
                 'items'=> [
+                    ['label' => Yii::t('view','menu.contact'), 'url' => ['/site/contact']],
                     ['label' => Yii::t('view','menu.news'), 'url' => ['/news/index']],
                     ['label' => Yii::t('view','menu.actions'), 'url' => ['/actions/index']],
                 ]
             ],
-            ['label' => Yii::t('view','menu.contact'), 'url' => ['/site/contact']],
         ];
         $logout = ' . Yii::$app->user->identity->username .';
 
